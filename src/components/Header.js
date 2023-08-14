@@ -17,7 +17,11 @@ const Header = () => {
           </a>
 
           {/* btn */}
-          <button className='btn btn-sm'>Hire Me</button>
+          <button className='btn btn-sm'>
+            <a href="https://www.linkedin.com/in/rishabh-shah-256b30247/" rel='noreferrer' target='_blank'>
+              Hire Me
+            </a>
+          </button>
         </div>
 
       </div>
