@@ -2,7 +2,8 @@ import React from 'react';
 
 // images
 // import Image from "../assets/avatar.svg";
-import Image from "../assets/avatar4.png";
+// import Image from "../assets/avatar4.png";
+import Image from "../assets/avatar2.png";
 
 // icons
 import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
@@ -51,8 +52,8 @@ const Banner = () => {
               <span className='mr-4 text-white'>I am a</span>
               <TypeAnimation
                 sequence={[
-                  'Full-Stack Dev', 2000,
-                  'Software Dev', 2000,
+                  'Full-Stack Developer', 2000,
+                  'Software Developer', 2000,
                   'Free Lancer', 2000
                 ]}
                 speed={50}

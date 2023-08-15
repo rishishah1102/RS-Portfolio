@@ -32,7 +32,7 @@ const Work = () => {
 
               <h2 className='h2 leading-tight text-accent'>
                 My Latest <br />
-                Work
+                Projects
               </h2>
 
               <p className='max-w-sm mb-16'>
