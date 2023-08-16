@@ -52,24 +52,56 @@ const Services = () => {
             initial="hidden"
             whileInView={'show'}
             viewport={{ once: false, amount: 0.3 }}
-            className='flex-1 lg:bg-services lg:bg-bottom bg-no-repeat mix-blend-lighten mb-12 lg:mb-0'>
+            className='flex-1 bg-no-repeat mix-blend-lighten mb-12 lg:mb-0'>
 
-            <h2 className='h2 text-accent mb-6'>
-              What I Do.
+            <h2 className='h2 text-accent mb-16 lg:mb-[6rem]'>
+              My Career
             </h2>
 
-            <h3 className='h3 max-w-[455px] mb-16'>
-              I'm a Fresher
-            </h3>
+            <div>
 
-            <button className='btn btn-sm'>
+              <h3 className='h3 max-w-[455px] mb-6'>
+                Education
+              </h3>
+
+              <div className="relative">
+
+                <motion.div
+                  style={{ scaleY: scrollYProgress }}
+                  className='absolute top-0 left-4 lg:left-9 bg-white h-full w-[4px] origin-top'
+                />
+
+                <ul className='w-full ml-2 lg:ml-8'>
+
+                  <Details
+                    position={"BE ' Information Technology"}
+                    company={"L.D. College Of Engineering"}
+                    companyLink={"https://ldce.ac.in/"}
+                    time={"2020-2024"}
+                    address={"Ahmedabad, Gujarat"}
+                    work={"Completed a comprehensive curriculum including courses on algorithms, data structures, " +
+                    "web development, and software engineering principles. Collaborated with peers on group projects, " + 
+                    "enhancing teamwork and communication skills."}
+                  />
+
+                </ul>
+
+              </div>
+
+            </div>
+
+            {/* <button className='btn btn-sm'>
               See My Work
-            </button>
+            </button> */}
 
           </motion.div>
 
           {/* services */}
           <div className='flex-1'>
+
+            <h3 className='h3 max-w-[455px] mb-6'>
+              Experience
+            </h3>
 
             {/* services list */}
             <div ref={ref} className='relative'>
