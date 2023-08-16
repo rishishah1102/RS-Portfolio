@@ -6,6 +6,9 @@ import { motion } from 'framer-motion';
 // variants
 import { fadeIn } from "../variants";
 
+// toast
+import { toast, ToastContainer } from "react-toastify";
+
 const Contact = () => {
 
   const [formData, setFormData] = useState({
@@ -35,12 +38,15 @@ const Contact = () => {
       });
 
       if (response.ok) {
-        console.log('Form submitted successfully');
+        // console.log('Form submitted successfully');
+        toast.success('✌️ E-Mail sent successfully!');
       } else {
-        console.error('Error submitting form');
+        // console.error('Error submitting form');
+        toast.error('Error sending E-Mail!');
       }
     } catch (error) {
-      console.error('Error submitting form', error);
+      // console.error('Error submitting form', error);
+      toast.error(error.response.data.message);
     }
   };
 
@@ -117,6 +123,19 @@ const Contact = () => {
         </div>
 
       </div>
+
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
 
     </section>
   );
