@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 // framer motion
 import { motion } from 'framer-motion';
@@ -8,6 +8,7 @@ import { fadeIn } from "../variants";
 
 // toast
 import { toast, ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 const Contact = () => {
 
@@ -42,11 +43,10 @@ const Contact = () => {
         toast.success('✌️ E-Mail sent successfully!');
       } else {
         // console.error('Error submitting form');
-        toast.error('Error sending E-Mail!');
+        toast.error('😔Error sending E-Mail!');
       }
     } catch (error) {
-      // console.error('Error submitting form', error);
-      toast.error(error.response.data.message);
+      toast.error("🙏Please try again later!")
     }
   };
 
@@ -94,25 +94,34 @@ const Contact = () => {
             <input
               type='text'
               className='bg-transparent border-b py-3 outline-none w-full placeholder:text-white focus:border-accent transition-all'
-              placeholder='Your Name'
+              placeholder='Your Name*'
               onChange={handleInputChange}
               value={formData.name}
+              name='name'
+              required
+              autoComplete='off'
             />
 
             <input
               type='email'
               className='bg-transparent border-b py-3 outline-none w-full placeholder:text-white focus:border-accent transition-all'
-              placeholder='Your E-Mail'
+              placeholder='Your E-Mail*'
               onChange={handleInputChange}
               value={formData.email}
+              name='email'
+              required
+              autoComplete='off'
             />
 
             <textarea
               type='email'
               className='bg-transparent border-b py-12 outline-none w-full placeholder:text-white focus:border-accent transition-all resize-none mb-12'
-              placeholder='Your message'
+              placeholder='Your message*'
               onChange={handleInputChange}
               value={formData.message}
+              name='message'
+              required
+              autoComplete='off'
             />
 
             <button className='btn btn-lg' onClick={handleSubmit}>Send Message</button>
