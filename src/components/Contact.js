@@ -7,6 +7,43 @@ import { motion } from 'framer-motion';
 import { fadeIn } from "../variants";
 
 const Contact = () => {
+
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: '',
+  });
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch('/submit-form', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        console.log('Form submitted successfully');
+      } else {
+        console.error('Error submitting form');
+      }
+    } catch (error) {
+      console.error('Error submitting form', error);
+    }
+  };
+
   return (
     <section className='py-16 lg:section' id='contacts'>
 
@@ -46,24 +83,31 @@ const Contact = () => {
             whileInView={'show'}
             viewport={{ once: false, amount: 0.3 }}
             className='flex flex-1 border rounded-2xl flex-col gap-y-6 pb-24 p-6 items-start'
+            onSubmit={handleSubmit}
           >
 
             <input
               type='text'
               className='bg-transparent border-b py-3 outline-none w-full placeholder:text-white focus:border-accent transition-all'
               placeholder='Your Name'
+              onChange={handleInputChange}
+              value={formData.name}
             />
 
             <input
               type='email'
               className='bg-transparent border-b py-3 outline-none w-full placeholder:text-white focus:border-accent transition-all'
               placeholder='Your E-Mail'
+              onChange={handleInputChange}
+              value={formData.email}
             />
 
             <textarea
               type='email'
               className='bg-transparent border-b py-12 outline-none w-full placeholder:text-white focus:border-accent transition-all resize-none mb-12'
               placeholder='Your message'
+              onChange={handleInputChange}
+              value={formData.message}
             />
 
             <button className='btn btn-lg'>Send Message</button>
