@@ -41,6 +41,11 @@ const Contact = () => {
       if (response.ok) {
         // console.log('Form submitted successfully');
         toast.success('✌️ E-Mail sent successfully!');
+        setFormData({
+          name: '',
+          email: '',
+          message: '',
+        });
       } else {
         // console.error('Error submitting form');
         toast.error('😔Error sending E-Mail!');
