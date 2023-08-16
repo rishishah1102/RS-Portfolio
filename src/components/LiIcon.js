@@ -10,13 +10,13 @@ function LiIcon({ reference }) {
     })
 
     return (
-        <figure className='absolute left-0 stroke-white'>
+        <figure className='absolute -left-5 lg:left-0 stroke-white'>
 
             <svg className='' width='50' height='50' viewBox='0 0 100 100'>
 
-                <motion.circle cx='75' cy='50' r='20' className='stroke-white stroke-1 fill-none' />
-                <motion.circle cx='75' cy='50' r='20' className='stroke-[5px] fill-black-60' style={{ pathLength: scrollYProgress }} />
-                <motion.circle cx='75' cy='50' r='10' className='stroke-1 animate-pulse fill-blue-600' />
+                <motion.circle cx='75' cy='50' r='20' className='stroke-white stroke-[2px] fill-none' />
+                <motion.circle cx='75' cy='50' r='20' className='stroke-[5px] fill-violet-950' style={{ pathLength: scrollYProgress }} />
+                <motion.circle cx='75' cy='50' r='10' className='stroke-1 animate-pulse fill-accent' />
 
             </svg>
 

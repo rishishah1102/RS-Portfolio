@@ -47,7 +47,12 @@ const Services = () => {
         <div className='flex flex-col lg:flex-row'>
 
           {/* text */}
-          <div className='flex-1 lg:bg-services lg:bg-bottom bg-no-repeat mix-blend-lighten mb-12 lg:mb-0'>
+          <motion.div
+            variants={fadeIn('right', 0.3)}
+            initial="hidden"
+            whileInView={'show'}
+            viewport={{ once: false, amount: 0.3 }}
+            className='flex-1 lg:bg-services lg:bg-bottom bg-no-repeat mix-blend-lighten mb-12 lg:mb-0'>
 
             <h2 className='h2 text-accent mb-6'>
               What I Do.
@@ -61,7 +66,7 @@ const Services = () => {
               See My Work
             </button>
 
-          </div>
+          </motion.div>
 
           {/* services */}
           <div className='flex-1'>
@@ -71,10 +76,10 @@ const Services = () => {
 
               <motion.div
                 style={{ scaleY: scrollYProgress }}
-                className='absolute top-0 left-9 bg-white h-full w-[4px] origin-top'
+                className='absolute top-0 left-4 lg:left-9 bg-white h-full w-[4px] origin-top'
               />
 
-              <ul className='w-full ml-8'>
+              <ul className='w-full ml-2 lg:ml-8'>
 
                 {
                   services.map((service, index) => {

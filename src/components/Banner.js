@@ -5,6 +5,9 @@ import React from 'react';
 // import Image from "../assets/avatar4.png";
 import Image from "../assets/avatar2.png";
 
+// import pdf
+import Resume from '../assets/Rishabh_Shah_Resume.pdf';
+
 // icons
 import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
 
@@ -16,6 +19,7 @@ import { motion } from 'framer-motion';
 
 // variants
 import { fadeIn } from "../variants";
+import { Link } from 'react-scroll';
 
 const Banner = () => {
   return (
@@ -71,7 +75,7 @@ const Banner = () => {
               viewport={{ once: false, amount: 0.7 }}
               className='mb-8 max-w-lg mx-auto lg:mx-0'
             >
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores corporis eum repudiandae est nobis cum obcaecati. Obcaecati perferendis optio officia.
+              Hi there! I'm Shah Rishabh, a passionate Full-Stack Developer and Software Developer. I also enjoy taking on freelance projects to explore new challenges and opportunities. My goal is to create impactful and user-friendly digital solutions that bring ideas to life. Let's connect and bring your projects to the next level!
             </motion.p>
 
             <motion.div
@@ -81,8 +85,12 @@ const Banner = () => {
               viewport={{ once: false, amount: 0.7 }}
               className='flex max-w-max gap-x-6 items-center mb-12 mx-auto lg:mx-0'>
 
-              <button className='btn btn-lg'>Contact Me</button>
-              <a href="/" className='btn-link text-gradient'>My Resume</a>
+              <button className='btn btn-lg'>
+                <Link to='contacts'>
+                  Contact Me
+                </Link>
+              </button>
+              <a href={Resume} download="RishabhShah.pdf" className='btn-link text-gradient'>My Resume</a>
 
             </motion.div>
 
