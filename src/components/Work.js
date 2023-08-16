@@ -39,7 +39,7 @@ const Work = () => {
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem cupiditate maiores officiis sapiente, ab consectetur. Ut assumenda obcaecati officia fuga?
               </p>
 
-              <button className='btn btn-lg'>View all Projects</button>
+              <button className='btn btn-lg'><a href='https://github.com/rishishah1102'>View All Projects</a></button>
 
             </div>
 

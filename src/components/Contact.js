@@ -89,7 +89,6 @@ const Contact = () => {
             whileInView={'show'}
             viewport={{ once: false, amount: 0.3 }}
             className='flex flex-1 border rounded-2xl flex-col gap-y-6 pb-24 p-6 items-start'
-            onSubmit={handleSubmit}
           >
 
             <input
@@ -116,7 +115,7 @@ const Contact = () => {
               value={formData.message}
             />
 
-            <button className='btn btn-lg'>Send Message</button>
+            <button className='btn btn-lg' onClick={handleSubmit}>Send Message</button>
 
           </motion.form>
 
