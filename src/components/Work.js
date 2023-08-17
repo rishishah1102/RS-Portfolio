@@ -35,8 +35,8 @@ const Work = () => {
                 Projects
               </h2>
 
-              <p className='max-w-sm mb-16'>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem cupiditate maiores officiis sapiente, ab consectetur. Ut assumenda obcaecati officia fuga?
+              <p className='max-w-sm mb-8'>
+              Explore a collection of my recent projects, highlighting my skills as a versatile developer. From messaging apps to Netflix Clone, discover my diverse work.
               </p>
 
               <button className='btn btn-lg'><a href='https://github.com/rishishah1102'>View All Projects</a></button>

@@ -10,6 +10,9 @@ import { fadeIn } from "../variants";
 import { toast, ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 
+// import axios
+import axios from 'axios';
+
 const Contact = () => {
 
   const [formData, setFormData] = useState({
@@ -30,17 +33,11 @@ const Contact = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch('http://localhost:5000/submit-form', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
+      const response = await axios.post('http://localhost:5000/contact', formData);
 
-      if (response.ok) {
+      if (response.status === 200) {
         // console.log('Form submitted successfully');
-        toast.success('✌️ E-Mail sent successfully!');
+        toast.success('✌️ Rishabh will connect with you soon!');
         setFormData({
           name: '',
           email: '',
