@@ -33,7 +33,7 @@ const Contact = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost:5000/contact', formData);
+      const response = await axios.post('https://rs-portfolio-backend.onrender.com/contact', formData);
 
       if (response.status === 200) {
         // console.log('Form submitted successfully');
